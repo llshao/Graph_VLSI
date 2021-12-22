@@ -1,8 +1,15 @@
 # This is a sample Python script.
 
-from Dijkstra import Graph
+# from DijkstraAdjMatrix import Graph
+from DijkstraAdjList import Graph
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
+    #  CASE 1
+    # g = Graph(3)
+    # g.add_edge(0,1,10)
+    # g.add_edge(0,2,2)
+    # g.add_edge(1,2,1)
+    #  CASE 2
     g = Graph(9)
     g.add_edge(0, 1, 4)
     g.add_edge(0, 6, 7)
@@ -19,7 +26,7 @@ if __name__ == '__main__':
     g.add_edge(5, 8, 12)
     g.add_edge(6, 7, 1)
     g.add_edge(7, 8, 3)
-    D = g.dijkstra(g, 0)
+    D = Graph.dijkstra(g, 0)
 
     for vertex in range(len(D)):
         print("Distance from vertex 0 to vertex", vertex, "is", D[vertex])
