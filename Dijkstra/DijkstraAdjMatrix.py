@@ -8,7 +8,7 @@ class Graph:
         self.edges = [[-1 for i in range(num_of_vertices)] for j in range(num_of_vertices)]
         self.visited = []
 
-    def add_edge(self, u, v, weight):
+    def add_edge(self, u, v, weight): # undirected
         self.edges[u][v] = weight
         self.edges[v][u] = weight
 
