@@ -1,7 +1,7 @@
 # This is a sample Python script.
 
 # from DijkstraAdjMatrix import Graph
-from DijkstraAdjList import Graph, build_vcg
+from DijkstraAdjList import Graph
 # Press the green button in the gutter to run the script.
 __name__ = '__test_vcg__'
 # __name__ = '__test_Dijkstra__'
@@ -9,9 +9,14 @@ __name__ = '__test_vcg__'
 if __name__ == '__test_vcg__':
     input_tuple = [(1, 1, 'a'), (4, 1, 'a'), (2, 2, 'b'), (5, 2, 'b'),
                    (3, 3, 'c'), (6, 3, 'c'), (5, 4, 'd'), (7, 4, 'd'),
-                   (1, 5, 'e'), (4, 5, 'e')]
+                   (1, 5, 'e'), (4, 5, 'e'), (7, 5, 'f'), (9, 5, 'f')]
+    # --e--  --f--
+    #    --d--
+    #   --c--
+    #  --b--
+    # --a--
     vcg = Graph(len(input_tuple)//2+2)
-    vcg = build_vcg(vcg, input_tuple)
+    vcg = Graph.build_vcg(vcg, input_tuple)
     D = Graph.dijkstra(vcg, 'top')
     key_list = [k for k in vcg.adjlist.keys()]
     value_list = [j for v in vcg.adjlist.values() for j in v.keys()]
