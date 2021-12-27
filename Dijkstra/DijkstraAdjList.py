@@ -67,7 +67,7 @@ def build_vcg(vcg: Graph, segs: list) -> Graph:  # build vertical constraint gra
             while scan_list_sorted[i][1][1] < curr_seg[1]:  # find bottom neighbor
                 i += 1
             b = i - 1
-            while scan_list_sorted[i][1][1] <= curr_seg[1]:  # find top TODO fix out of index
+            while scan_list_sorted[i][1][1] <= curr_seg[1]:  # find top neighbor
                 i += 1
             t = i
             vcg.add_edge(curr_seg[2], scan_list_sorted[b][0], 1)  # add bottom
